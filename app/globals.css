@@ -1,0 +1,82 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 10, 10, 10;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gold-500 hover:bg-gold-600 text-black-900 font-medium rounded-md transition-all transform hover:scale-105 shadow-gold;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border border-gold-500 text-gold-500 hover:bg-gold-500/10 font-medium rounded-md transition-all;
+  }
+  
+  .card {
+    @apply bg-black-800 border border-black-700 rounded-lg p-6 hover:border-gold-500/50 transition-all;
+  }
+
+  .input {
+    @apply w-full bg-black-800 border border-black-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent;
+  }
+
+  .heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold;
+  }
+
+  .heading-lg {
+    @apply text-3xl md:text-4xl font-serif font-bold;
+  }
+
+  .heading-md {
+    @apply text-2xl md:text-3xl font-serif font-bold;
+  }
+
+  .heading-sm {
+    @apply text-xl md:text-2xl font-serif font-bold;
+  }
+}
+
+/* Gold divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(245,195,17,0) 0%, rgba(245,195,17,1) 50%, rgba(245,195,17,0) 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F5C311;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C49C0E;
+}
